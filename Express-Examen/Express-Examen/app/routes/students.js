@@ -19,7 +19,23 @@ router.get('/add', (req, res) => {
     res.render('add.ejs', {})
  })
  
+ /* ADD students TO DB */
+ router.post('/add', (req, res) => {
+  let query = {naam: req.body.naam, birthdate: req.body.birthdate, major: req.body.major};
+   db.collection('students').find(query).toArray(function(err, result) {
+    if (err) console.log(err)
+     if (result == ''){
+      datum = getDatum();
+      db.collection('students').insertOne({query}, (err, result) => {
+        if (err) return console.log(err)
+         res.redirect('/list.ejs')
+      })
+    }
+    else{
+      res.render('exists.ejs');
+    }
 
-   
 
- 
+   })
+ })
+ module.exports = router;
