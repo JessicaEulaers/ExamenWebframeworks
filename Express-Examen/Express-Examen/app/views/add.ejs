@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Student</title>
+  <!--link rel='stylesheet' href='stylesheets/bootstrap.min.css'-->
+</head>
+<body>
+<div>
+  <h2>Add a student</h2>
+  <br/><br/>
+  <form action='/students/add' method='POST'>
+   <table>
+     <tr><td>Name : </td><td><input type='text' name='name'></td></tr>
+     <tr><td>Birthdate : </td><td><input type='text' name='birthdate'></td></tr>
+     <tr><td>Major : </td><td><input type='text' name='major' size=100></td></tr>
+     <tr><td><button type='submit'>Add</button></td></tr>
+   </table>
+  </form>
+</div>
+</body>
+</html>
